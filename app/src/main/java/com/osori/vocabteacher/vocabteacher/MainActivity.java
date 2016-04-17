@@ -12,8 +12,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
     public Word myWord = new Word("apple", "苹果🍎", 1);
     // ArrayList<Word> wordList = new ArrayList<Word>();
     public WordList myWordList = new WordList();

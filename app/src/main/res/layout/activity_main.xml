@@ -7,12 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.osori.vocabteacher.vocabteacher.MainActivity">
+    tools:context="com.osori.vocabteacher.vocabteacher.MainActivity"
+    android:scrollIndicators="right">
 
     <TextView
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:textSize="20pt"
+        android:textSize="15pt"
         android:id="@+id/txtWord"
         android:layout_alignRight="@+id/webview"
         android:layout_alignEnd="@+id/webview" />
@@ -22,9 +23,9 @@
         android:layout_width="500dp"
         android:layout_height="350dp"
         android:layout_gravity="center_vertical"
-        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtWord" />
 
     <Button
         android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
         android:text="Next word"
         android:id="@+id/button"
         android:onClick="buttonOnClick"
-        android:layout_below="@+id/txtWord"
+        android:layout_alignTop="@+id/webview"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -43,26 +44,37 @@
         android:onClick="add"
         android:layout_below="@+id/webview"
         android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
         android:layout_alignTop="@+id/button2"
-        android:layout_toLeftOf="@+id/button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Word" />
+        android:text="Word"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button"
+        android:windowSoftInputMode="adjustPan" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText2"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:text="Meaning" />
+        android:text="Meaning"
+        android:layout_below="@+id/webview"
+        android:layout_toRightOf="@+id/editText"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+/>
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentLeft="true"
+       />
 
 </RelativeLayout>
