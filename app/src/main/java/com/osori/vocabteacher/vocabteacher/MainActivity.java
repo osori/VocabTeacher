@@ -10,13 +10,16 @@ import android.widget.EditText;
 import java.util.ArrayList;
 
 
-
 public class MainActivity extends AppCompatActivity {
+
+
+
     public Word myWord = new Word("apple", "苹果🍎", 1);
     // ArrayList<Word> wordList = new ArrayList<Word>();
     public WordList myWordList = new WordList();
     EditText edit;
     int i = 0;
+
 
     //private EditText txtWord = (EditText) layout.findViewById(R.id.txtWord);
     //private EditText txtMeaning = (EditText) layout.findViewById(R.id.txtMeaning);
@@ -25,23 +28,23 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Integer> test = new ArrayList<Integer>();
 
+
         //wordList.add(myWord);
-        myWordList.add(new Word("ugly", "丑", 1));
-        myWordList.add(new Word("pretty", "漂亮", 1));
+        myWordList.add(new Word("ugly", "丑 (chǒu)", 1));
+        myWordList.add(new Word("pretty", "漂亮 (piào liang)", 1));
         myWordList.add(new Word("cherry blossoms", "벚꽃", 2));
         myWordList.add(new Word("programmer", "프로그래머", 2));
         myWordList.add(new Word("snow", "雪（ゆき)", 3));
         myWordList.add(new Word("flower", "花（はな）", 3));
-        myWordList.add(new Word("happy", "高兴", 1));
-        myWordList.add(new Word("hot pot", "火锅", 1));
+        myWordList.add(new Word("happy", "高兴 (gāo xìng)", 1));
+        myWordList.add(new Word("hot pot", "火锅 (huǒ guō)", 1));
         myWordList.add(new Word("spicy", "매운", 2));
         myWordList.add(new Word("chair", "의자", 2));
         myWordList.add(new Word("lamp", "lampara", 4));
         myWordList.add(new Word("honey", "꿀", 2));
         myWordList.add(new Word("furniture", "가구", 2));
-        myWordList.add(new Word("pig", "猪", 1));
-        myWordList.add(new Word("teacher", "老师", 1));
-
+        myWordList.add(new Word("pig", "猪 (zhū)", 1));
+        myWordList.add(new Word("teacher", "老师 (lǎo shī)", 1));
 
 
         super.onCreate(savedInstanceState);
@@ -63,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
     public void buttonOnClick(View v) {
         TextView txtWord = (TextView) findViewById(R.id.txtWord);
 
@@ -74,8 +78,14 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        txtWord.setText(myWordList.get(i).getWord() + "\n" + myWordList.get(i).getMeaning());
-        webview.loadUrl("https://duckduckgo.com/?q=" + myWordList.get(i).getWord() + "&ia=images&iax=1");
+        Word w = myWordList.get(i);
+
+
+
+
+        txtWord.setText(w.getWord() + "\n" + w.getMeaning());
+        webview.loadUrl("https://duckduckgo.com/?q=" + w.getWord() + "&ia=images&iax=1");
+
         i++;
 
     }
@@ -84,9 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
         EditText myTxtWord = (EditText)findViewById(R.id.editText);
         EditText myTxtMeaning = (EditText)findViewById(R.id.editText2);
-
-        //String strWord = edit.myTxtWord.getText().toString();
-        //String strMeaning = edit.txtMeaning.getText().toString();
 
         String strWord = myTxtWord.getText().toString();
         String strMeaning = myTxtMeaning.getText().toString();
@@ -97,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
         myWordList.add(newWord);
 
     }
+
+
+
 
 
 }
